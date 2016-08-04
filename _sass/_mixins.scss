@@ -25,40 +25,6 @@
   font-style: italic;
 }
 
-.tctc-button {
-  @include montserrat(normal);
-  border-radius: 10px;
-  box-shadow: 0 0 0 0;
-  background-color: $button-bg-color;
-  border-color: $button-bg-color;
-  border-style: solid;
-  color: $button-color;
-  cursor: pointer;
-  font-size: $button-font-size;
-  font-weight: bold;
-  width: $button-width;
-  height: $button-height;
-  text-transform: uppercase;
-  transition: background-color 500ms ease, border 500ms ease, border-radius 500ms ease, border-color 500ms ease;
-  outline: 0;
-
-  &.opened,
-  &:hover {
-    background-color: $base-bg-green;
-    border-color: $base-bg-green;
-  }
-
-  &.opened {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-
-    &:hover {
-      border-color: $base-bg-blue;
-      background-color: $base-bg-blue;
-    }
-  }
-}
-
 @mixin respond-to($media) {
   @if $media == phone {
     @media screen and (max-width: $screen-phone-max) {

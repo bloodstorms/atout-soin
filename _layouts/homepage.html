@@ -2,5 +2,44 @@
 <html>
 
   {% include head.html %}
-  
+
+  <body class="homepage-body">
+    <div class="main-background">
+      <div class="main-content">
+
+        {% include header.html %}
+
+        <div id="carrousel">
+          <span class="prev"><img src="img/arrow-prev.png"></span>
+          <span class="next"><img src="img/arrow-next.png"></span>
+          <ul>
+            <li><img class="content" src="img/massage1.jpg" /></li>
+            <li><img class="content" src="img/massage2.jpg" /></li>
+          </ul>
+          <div id="banner_description">
+            Venez appréciez des moments de bien-être incomparables.
+          </div>
+        </div>
+
+        <div class="block-text-container">
+          <div class="block-text block-text--left">
+            <h1 class="block-text__title">Lorem</h1>
+            <p class="block-text__p">Lorem ipsum dolor sit amet, aliquam dignissimos integer in, maecenas porta augue convallis ex, eget suspendisse vulputate ut, integer integer ipsum consequat tortor non convallis, ligula enim. Eu sed, nam turpis turpis imperdiet sed maecenas eleifend, mollis mauris quis.</p>
+          </div>
+          <div class="block-text block-text--right">
+            <h1 class="block-text__title">Ipsum</h1>
+            <p class="block-text__p">Tempor lorem sollicitudin nam quis scelerisque tellus, risus vitae sit a mauris nec morbi. Ante ac mattis accumsan lobortis pretium aliquam, pede turpis sit vestibulum eu in. Aenean pulvinar et turpis magna consectetuer dictumst, mattis vivamus felis, sit lobortis ac.</p>
+          </div>
+          <div class="block-text block-text--left">
+            <h1 class="block-text__title">Dolor</h1>
+            <p class="block-text__p">Enim mattis inceptos. Pede penatibus morbi, ipsum curabitur nulla penatibus tortor pulvinar morbi, curabitur duis a, libero porttitor curabitur condimentum sit, praesent ipsum cras.</p>
+          </div>
+        </div>
+
+        {% include footer.html %}
+
+      </div>
+    </div>
+
+  </body>
 </html>
