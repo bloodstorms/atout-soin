@@ -1,0 +1,123 @@
+@mixin montserrat($weight) {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: $weight;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin sans-serif($weight) {
+  font-family: sans-serif;
+  font-weight: $weight;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+}
+
+@mixin roboto($weight) {
+  font-family: 'Roboto Slab', serif;
+  font-weight: $weight;
+  letter-spacing: 0;
+}
+
+@mixin georgia($weight) {
+  font-family: Georgia;
+  dominant-baseline: middle;
+  font-weight: $weight;
+  font-style: italic;
+}
+
+.tctc-button {
+  @include montserrat(normal);
+  border-radius: 10px;
+  box-shadow: 0 0 0 0;
+  background-color: $button-bg-color;
+  border-color: $button-bg-color;
+  border-style: solid;
+  color: $button-color;
+  cursor: pointer;
+  font-size: $button-font-size;
+  font-weight: bold;
+  width: $button-width;
+  height: $button-height;
+  text-transform: uppercase;
+  transition: background-color 500ms ease, border 500ms ease, border-radius 500ms ease, border-color 500ms ease;
+  outline: 0;
+
+  &.opened,
+  &:hover {
+    background-color: $base-bg-green;
+    border-color: $base-bg-green;
+  }
+
+  &.opened {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &:hover {
+      border-color: $base-bg-blue;
+      background-color: $base-bg-blue;
+    }
+  }
+}
+
+@mixin respond-to($media) {
+  @if $media == phone {
+    @media screen and (max-width: $screen-phone-max) {
+      @content;
+    }
+  } @else if $media == tablet-portrait {
+    @media screen and (orientation: portrait)
+    and (min-width: $screen-tablet-min)
+    and (max-width: $screen-tablet-max) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media screen and(min-width: $screen-tablet-min)
+    and (max-width: $screen-tablet-max) {
+      @content;
+    }
+  } @else if $media == tablet-landscape {
+    @media screen and (orientation: landscape)
+    and (min-device-width: $screen-tablet-landscape-min)
+    and (max-device-width: $screen-tablet-landscape-max) {
+      @content;
+    }
+  } @else if $media == all-mobile {
+    @media screen and (max-width: $screen-tablet-max) {
+      @content;
+    }
+  } @else if $media == all-desktop {
+    @media screen and (min-width: $screen-desktop-min) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media screen and(min-width: $screen-desktop-min)
+    and (max-width: $screen-desktop-max) {
+      @content;
+    }
+  } @else if $media == medium-desktop {
+    @media screen and(min-width: $screen-medium-desktop-min) {
+      @content;
+    }
+  } @else if $media == large-desktop {
+    @media screen and (min-width: $screen-large-desktop-min) {
+      @content;
+    }
+  } @else if $media == x-large-desktop {
+    @media screen and (min-width: $screen-x-large-desktop-min) {
+      @content;
+    }
+  } @else if $media == xx-large-desktop {
+    @media screen and (min-width: $screen-xx-large-desktop-min) {
+      @content;
+    }
+  } @else if $media == retina-like {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+      @content;
+    }
+  }
+}
