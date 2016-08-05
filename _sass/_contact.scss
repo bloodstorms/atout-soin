@@ -1,0 +1,97 @@
+.top-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+}
+
+.top-contact p {
+  margin: 10px;
+  @include montserrat(300);
+  color: $base-color;
+  font-size: 1.1em;
+  text-align: center;
+  text-shadow: 2px 2px 5px #232323;
+}
+
+.top-contact a {
+  color: $base-color;
+  text-decoration: underline;
+}
+
+.top-contact i {
+  font-size: 1em;
+}
+
+.top-title {
+  font-family: 'Great Vibes', cursive;
+  color: $base-color;
+  font-size: 3.5em;
+  text-shadow: 2px 2px 5px #232323;
+  text-align: center;
+  background-color: rgba(24,24,24,0.3);
+  line-height: 1.6em;
+  margin-top: 50px;
+}
+
+.middle-container {
+  //margin-bottom: 30px;
+  right: 0;
+  width: 100%;
+}
+
+.middle-title {
+  @extend .top-title;
+  margin-top: 0;
+}
+
+.map-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.map-annotations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+}
+
+.map-annotations p {
+  margin: 10px;
+  @include montserrat(300);
+  color: $base-color;
+  font-size: 1.1em;
+  text-shadow: 2px 2px 5px #232323;
+}
+
+.map-annotations span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.map {
+  width: 50%;
+  border: solid 3px rgba(24,24,24,0.3);
+  border-top: none;
+}
+
+.bottom-title {
+  @extend .middle-title;
+}
+
+.bottom-description p {
+  color: $base-color;
+  @include montserrat(300);
+  text-shadow: 2px 2px 5px #232323;
+  margin: 40px 50px 20px 50px;
+  text-align: justify;
+  text-indent: 50px;
+
+  &:last-child {
+    margin-bottom: 80px;
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="main-body">
+    <div class="main-background">
+      <div class="main-content">
+
+        {% include header.html %}
+
+        <div class='top-container'>
+          <h1 class="main-title top-title">- Nous contacter -</h1>
+          <div class="top-contact">
+            <p>Jean-Marc Vachez</p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              06.63.82.75.73
+            </p>
+            <p>
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              <a href="mailto:jmarc_v@yahoo.fr" target="_top">jmarc_v@yahoo.fr</a>
+            </p>
+          </div>
+        </div>
+
+        <div class='middle-container'>
+          <h1 class="main-title middle-title">- Nous trouver -</h1>
+          <div class="map-container">
+            <div class="map-annotations">
+              <p><span>Jmv<br>Soin et relaxation</span></p>
+              <p>450E chemin des Bonnes Herbes</p>
+              <p>83200 TOULON</p>
+            </div>
+            <div class="map">
+              <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+              <div style='overflow:hidden;height:250px;width:100%;'>
+                <div id='gmap_canvas' style='height:250px;width:100%;'>
+                </div>
+                <div>
+                  <small>
+                    <a href="http://embedgooglemaps.com">embed google maps</a>
+                  </small>
+                </div>
+                <div>
+                  <small>
+                    <a href="https://binaireoptieservaringen.nl/">wij hebben alle binaire opties ervaringen in 1 overzicht</a>
+                  </small>
+                </div>
+                <style>#gmap_canvas img{max-width:none!important;background:none!important}
+                </style>
+              </div>
+              <script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(43.1454286,5.8914671999999655),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(43.1454286,5.8914671999999655)});infowindow = new google.maps.InfoWindow({content:'<strong>Jmv</strong><br>450E chemin des Bonnes Herbes<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+              </script>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-container">
+          <h1 class="main-title bottom-title">- A propos -</h1>
+          <div class="bottom-description">
+            <p>Lorem ipsum dolor sit amet, aliquam dignissimos integer in, maecenas porta augue convallis ex, eget suspendisse vulputate ut, integer integer ipsum consequat tortor non convallis, ligula enim. Eu sed, nam turpis turpis imperdiet sed maecenas eleifend, mollis mauris quis.</p>
+            <p>Tempor lorem sollicitudin nam quis scelerisque tellus, risus vitae sit a mauris nec morbi. Ante ac mattis accumsan lobortis pretium aliquam, pede turpis sit vestibulum eu in. Aenean pulvinar et turpis magna consectetuer dictumst, mattis vivamus felis, sit lobortis ac.</p>
+            <p>Enim mattis inceptos. Pede penatibus morbi, ipsum curabitur nulla penatibus tortor pulvinar morbi, curabitur duis a, libero porttitor curabitur condimentum sit, praesent ipsum cras.</p>
+          </div>
+        </div>
+
+        {% include footer.html %}
+
+      </div>
+    </div>
+  </body>
+</html>
