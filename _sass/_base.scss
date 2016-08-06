@@ -20,6 +20,31 @@ a:visited {
   text-decoration: none;
 }
 
+p {
+  @include montserrat(300);
+  color: $base-color;
+  font-size: 1em;
+  text-shadow: 2px 2px 5px #232323;
+
+  @include respond-to(phone) {
+    font-size: 0.9em;
+  }
+}
+
+.main-title {
+  font-family: 'Great Vibes', cursive;
+  color: $base-color;
+  font-size: 3.5em;
+  text-shadow: 2px 2px 5px #232323;
+  text-align: center;
+  background-color: rgba(24,24,24,0.3);
+  line-height: 1.6em;
+
+  @include respond-to(phone) {
+    font-size: 3em;
+  }
+}
+
 .main-body {
   height: 100%;
 }
@@ -73,6 +98,7 @@ a:visited {
 .logo {
   height: 45px;
   margin-left: 3px;
+  border-radius: 15px;
 }
 
 .nav-container {
@@ -100,24 +126,23 @@ a:visited {
   display: flex;
   flex-direction: column;
   width: auto;
-  margin-top: 9px;
+  margin-top: 8px;
   background-color: rgba(24,24,24,0.7);
   align-items: flex-end;
   width: 120px;
   padding: 10px 5px;
 
-  a {
+  li {
     border-right: none;
     padding: 5px;
   }
 }
 
-.menu a {
+.menu li {
   color: $base-color;
   text-decoration: none;
   @include montserrat(600);
   text-transform: uppercase;
-  transition: color .2s ease-in;
   border-right: solid 2px $base-color;
   padding-right: 14px;
   text-shadow: 2px 2px 5px #232323;
@@ -127,9 +152,14 @@ a:visited {
     border-right: none;
   }
 
-  &:hover {
-    color: #898484;
-    cursor: pointer;
+  a {
+    color: $base-color;
+    transition: color .2s ease-in;
+
+    &:hover {
+      color: #898484;
+      cursor: pointer;
+    }
   }
 }
 
@@ -196,7 +226,7 @@ a:visited {
   }
 }
 
-#banner_description {
+.banner-description {
   position: absolute;
   display: flex;
   align-items: center;
@@ -211,35 +241,49 @@ a:visited {
   font-family: fantasy;
 }
 
-#banner_description img {
+.banner-description img {
   padding-left: 7px;
   padding-top: 2px;
   padding-right: 3px
 }
 
-.main-title {
-  font-family: 'Great Vibes', cursive;
-  color: $base-color;
-  font-size: 3.5em;
-  text-shadow: 2px 2px 5px #232323;
-  text-align: center;
-  background-color: rgba(24,24,24,0.3);
-  line-height: 1.6em;
-  margin-top: 50px;
+.mobile-banner {
+  display: none;
+
+  @include respond-to(phone) {
+    display: block;
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+  }
+}
+
+.mobile-banner__image {
+  width: 100%;
+}
+
+.mobile-banner__description {
+  @extend .banner-description;
+  font-size: 0.8em;
+  line-height: 1.2em;
 }
 
 .block-text-container {
   display: flex;
   flex-direction: column;
   margin: 30px 30px 60px 30px;
-
-  @include respond-to(phone) {
-    margin-top: 60px;
-  }
 }
 
 .block-text-container--margin {
   margin-top: 60px;
+}
+
+.block-text__title {
+  font-size: 2em;
+
+  @include respond-to(phone) {
+    font-size: 1.7em;
+  }
 }
 
 .block-text {
